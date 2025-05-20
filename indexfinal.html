@@ -1,0 +1,415 @@
+<!DOCTYPE html>    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; frame-src 'self' https://www.youtube.com https://w.soundcloud.com https://open.spotify.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; script-src 'self';">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thomas Pruitt | Sound Designer</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Global Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background-color: #0f0f13;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            opacity: 0.7;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 300;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #ffffff, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Nav */
+        nav {
+            padding: 1.5rem 0;
+            background-color: rgba(15, 15, 19, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links li {
+            margin: 0;
+        }
+        
+        .nav-links a {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .nav-links a:hover {
+            color: #fff;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            padding: 120px 0 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #13131a, #1a1a22);
+        }
+        
+        .hero-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 50%, rgba(147, 51, 234, 0.1), transparent 50%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+        
+        .social-links-hero {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: #fff;
+        }
+        
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section:nth-child(odd) {
+            background-color: #1a1a22;
+        }
+        
+        .section:nth-child(even) {
+            background-color: #13131a;
+        }
+        
+        .section-header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        /* Media Cards */
+        .media-card {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .media-placeholder {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .play-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .media-title {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        
+        .media-url {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+            text-align: center;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0a0a0f;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col a, .footer-col p {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .footer-col a:hover {
+            color: #fff;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link-footer {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .copyright {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">Thomas Pruitt</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sound-design">Sound Design</a></li>
+                <li><a href="#implementation">Implementation</a></li>
+                <li><a href="#orchestra">Orchestra</a></li>
+                <li><a href="#spotify">Spotify</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-wave"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Thomas Pruitt</h1>
+                <p>I'm a sound designer and music composer specializing in audio for video games.</p>
+                <p>With a passion for creating immersive audio environments, I bring games to life through carefully crafted sound design and original compositions. I specialize in dynamic audio systems, interactive music, and character-defining sound effects that enhance player experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sound Design Reel Section -->
+    <section id="sound-design" class="section">
+        <div class="container">
+            <h2 class="section-header">Sound Design Reel</h2>
+            
+            <div class="media-card">
+                <div class="media-placeholder" style="padding-top: 56.25%; height: auto; position: relative;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/58YbUxQ8Ck8" title="Sound Design Reel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Reel Section -->
+    <section id="implementation" class="section">
+        <div class="container">
+            <h2 class="section-header">Implementation Reel</h2>
+            
+            <div class="media-card">
+                <div class="media-placeholder" style="padding-top: 56.25%; height: auto; position: relative;">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/ACa-G_v3Rnk" title="Implementation Reel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Orchestra Demo Section -->
+    <section id="orchestra" class="section">
+        <div class="container">
+            <h2 class="section-header">Orchestra Demo</h2>
+            
+            <div class="media-card">
+                <div class="media-placeholder" style="height: 166px; position: relative;">
+                    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/thomaspruittmusic/tommy-p-orchestra-demo&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Spotify Section -->
+    <section id="spotify" class="section">
+        <div class="container">
+            <h2 class="section-header">My Music on Spotify</h2>
+            
+            <div class="media-card">
+                <div class="media-placeholder" style="height: 352px; position: relative;">
+                    <iframe style="border-radius:8px; width:100%; height:100%;" src="https://open.spotify.com/embed/artist/0i5AZdGPPMUjAajzRk4usp?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:thomaspruitt68@gmail.com">thomaspruitt68@gmail.com</a></li>
+                        <li><a href="tel:+14043453197">404-345-3197</a></li>
+                        <li>Based in Nashville, TN</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#sound-design">Sound Design</a></li>
+                        <li><a href="#implementation">Implementation</a></li>
+                        <li><a href="#orchestra">Orchestra</a></li>
+                        <li><a href="#spotify">Spotify</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Thomas Pruitt. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
