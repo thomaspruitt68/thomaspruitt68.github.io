@@ -273,6 +273,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#sound-design">Sound Design</a></li>
                 <li><a href="#implementation">Implementation</a></li>
+                <li><a href="#demo-trailer">Demo Trailer</a></li>
                 <li><a href="#game-demos">Game Demos</a></li>
                 <li><a href="#spotify">Spotify</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -308,6 +309,18 @@
             <div class="media-card">
                 <div class="video-embed">
                     <iframe src="https://www.youtube.com/embed/ACa-G_v3Rnk" title="Implementation Reel" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="demo-trailer" class="section">
+        <div class="container">
+            <h2 class="section-header">Demo Trailer</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px;">Complete trailer production featuring original soundtrack composition and professionally captured gameplay footage.</p>
+            <div class="media-card">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/Mp2AZDXskNE" title="Demo Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -370,6 +383,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#sound-design">Sound Design</a></li>
                         <li><a href="#implementation">Implementation</a></li>
+                        <li><a href="#demo-trailer">Demo Trailer</a></li>
                         <li><a href="#game-demos">Game Demos</a></li>
                         <li><a href="#spotify">Spotify</a></li>
                     </ul>
@@ -381,5 +395,24 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
